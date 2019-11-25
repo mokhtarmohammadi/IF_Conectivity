@@ -1,0 +1,35 @@
+function [ IF_new,NC ] = merge_cells( IF,i,j )
+%UNTITLED3 Summary of this function goes here
+%   Detailed explanation goes here
+A=IF{i};
+a=A(1,:)
+x_si=a(2);
+
+B=IF{j};
+a=B(1,:);
+x_sj=a(2);
+
+IF{j}=[];
+
+IF{i}=[A
+if x_si<x_sj
+
+    
+    B(end+1:end+length(A)-1)=A;
+    IF{i}=B;
+else
+    A(end+1:end+length(B)-1)=B;
+    IF{i}=B;
+end
+NC=0;
+for jj=1:length(IF)
+    if isempty(IF)
+    continue;
+    else
+        NC=N+1;
+        IF_new{NC}=IF{jj};
+        
+    end
+
+end
+end
